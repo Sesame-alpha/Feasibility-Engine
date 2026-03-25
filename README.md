@@ -1,5 +1,4 @@
 # Feasibility-Engine
-# Department Budget Feasibility & Decision System
 
 A complete front-end web application that helps organizations evaluate project proposals based on departmental budgets and profitability. It combines **Business Intelligence** (insights, charts) with **Systems Development** (decision logic, state management).
 
