@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Feasibility & Decision System</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white">
+
+  <div class="container py-5">
+    <header class="text-center mb-5">
+      <h1 class="text-purple">📊 Department Budget Feasibility & Decision System</h1>
+      <p class="lead">Upload CSV projects → Automatic feasibility check → Real budget updates → Smart insights</p>
+    </header>
+
+    <!-- Budget Setup Section (Admin) -->
+    <div class="card bg-dark-purple mb-4">
+      <div class="card-header border-purple">
+        <h3 class="mb-0 text-purple">💰 Set Department Budgets</h3>
+      </div>
+      <div class="card-body">
+        <div id="budget-inputs" class="row g-3">
+          <!-- Dynamic budget fields will appear here -->
+        </div>
+        <button id="save-budgets" class="btn btn-purple mt-3">Save Budgets</button>
+        <div class="alert alert-info mt-3 small" role="alert">
+          <strong>Current budgets:</strong> <span id="budget-summary"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- File Upload -->
+    <div class="card bg-dark-purple mb-4">
+      <div class="card-header border-purple">
+        <h3 class="mb-0 text-purple">📂 Upload Projects (CSV)</h3>
+      </div>
+      <div class="card-body">
+        <input type="file" id="csvFile" accept=".csv" class="form-control bg-black text-white border-purple mb-2">
+        <div class="form-text text-muted">
+          Format: Department,Project,Cost,ExpectedRevenue<br>
+          Example: Marketing,Ad Campaign,3000,7000
+        </div>
+        <button id="process-btn" class="btn btn-purple mt-3">Process & Decide</button>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card bg-dark-purple h-100">
+          <div class="card-header border-purple">
+            <h3 class="text-purple mb-0">✅ Approved Projects</h3>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-dark table-hover mb-0">
+                <thead>
+                  <tr>
+                    <th>Dept</th><th>Project</th><th>Cost</th><th>Revenue</th><th>Profit</th>
+                  </tr>
+                </thead>
+                <tbody id="approved-table"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card bg-dark-purple h-100">
+          <div class="card-header border-purple">
+            <h3 class="text-purple mb-0">❌ Rejected Projects</h3>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-dark table-hover mb-0">
+                <thead>
+                  <tr>
+                    <th>Dept</th><th>Project</th><th>Cost</th><th>Revenue</th><th>Reason</th>
+                  </tr>
+                </thead>
+                <tbody id="rejected-table"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insights & Recommendations -->
+    <div class="card bg-dark-purple mb-4">
+      <div class="card-header border-purple">
+        <h3 class="mb-0 text-purple">💡 Insights & Recommendations</h3>
+      </div>
+      <div class="card-body" id="insights-area">
+        <p class="text-muted">No data processed yet.</p>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card bg-dark-purple">
+          <div class="card-header border-purple">
+            <h3 class="text-purple mb-0">📊 Budget Usage per Department</h3>
+          </div>
+          <div class="card-body">
+            <canvas id="budgetChart" width="400" height="300"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card bg-dark-purple">
+          <div class="card-header border-purple">
+            <h3 class="text-purple mb-0">📈 Profit vs Cost (Approved)</h3>
+          </div>
+          <div class="card-body">
+            <canvas id="profitChart" width="400" height="300"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center text-muted mt-5 small">
+      &copy; 2025 Budget Feasibility System | Real-time decision engine
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+  </html>
