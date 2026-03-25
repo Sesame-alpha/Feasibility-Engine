@@ -1,0 +1,68 @@
+/* General Dark Theme */
+body {
+  background-color: #000000 !important;
+  color: #ffffff;
+}
+
+.bg-dark-purple {
+  background-color: #1a0b2e;
+  border: 1px solid #6a0dad;
+  border-radius: 12px;
+}
+
+.border-purple {
+  border-color: #6a0dad !important;
+}
+
+.text-purple {
+  color: #9b4dff !important;
+}
+
+.btn-purple {
+  background-color: #6a0dad;
+  border-color: #6a0dad;
+  color: white;
+}
+
+.btn-purple:hover {
+  background-color: #5a0cb5;
+  border-color: #5a0cb5;
+  color: white;
+}
+
+.table-dark {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+.table-dark th {
+  border-bottom-color: #6a0dad;
+  color: #9b4dff;
+}
+
+.table-dark td, .table-dark th {
+  border-top-color: #2c2c2c;
+}
+
+.form-control.bg-black {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #6a0dad;
+}
+
+.form-control.bg-black:focus {
+  background-color: #1a1a1a;
+  border-color: #9b4dff;
+  box-shadow: 0 0 0 0.25rem rgba(106, 13, 173, 0.25);
+  color: white;
+}
+
+.card-header {
+  border-bottom: 2px solid #6a0dad;
+}
+
+.alert-info {
+  background-color: #1a0b2e;
+  border-color: #6a0dad;
+  color: #cbb8ff;
+}
